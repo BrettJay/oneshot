@@ -1,4 +1,4 @@
-# Timelapse
+# Oneshot - a timelapse utility for macOS
 
 A simple macOS utility to capture screenshots at regular intervals for creating timelapse videos.
 
