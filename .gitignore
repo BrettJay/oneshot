@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Captured screenshots (folders created by timelapse.sh)
+# Uncomment if you want to ignore capture folders:
+# */
+
+# Output videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Temporary files
+*.tmp
+*~
