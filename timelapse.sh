@@ -149,8 +149,9 @@ cleanup() {
     echo "Total frames in sequence: $((seq - 1))"
     echo "Location: $SEQDIR/"
     echo ""
-    echo "To create video (24fps):"
+    echo "To create video (24fps, 4K):"
     echo "  ffmpeg -framerate 24 -pattern_type glob -i '${SEQDIR}/${NAME}-*.${FORMAT}' \\"
+    echo "    -vf \"scale=3840:2160:force_original_aspect_ratio=decrease,pad=3840:2160:(ow-iw)/2:(oh-ih)/2\" \\"
     echo "    -c:v libx264 -crf 20 -pix_fmt yuv420p ${NAME}.mp4"
     exit 0
 }

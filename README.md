@@ -38,8 +38,11 @@ After capturing, use ffmpeg to create a video:
 
 ```bash
 ffmpeg -framerate 24 -pattern_type glob -i './redesign/redesign-*.jpg' \
+  -vf "scale=3840:2160:force_original_aspect_ratio=decrease,pad=3840:2160:(ow-iw)/2:(oh-ih)/2" \
   -c:v libx264 -crf 20 -pix_fmt yuv420p redesign.mp4
 ```
+
+This scales images to fit within 4K (3840×2160) while preserving aspect ratio, adding letterboxing/pillarboxing as needed. Adjust the resolution to match your target output.
 
 ## Interval Guide
 
